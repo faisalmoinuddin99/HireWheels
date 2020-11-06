@@ -1,5 +1,7 @@
 package com.upgrad.hirewheels;
 
+import com.upgrad.hirewheels.dao.RoleDao;
+import com.upgrad.hirewheels.entities.Role;
 import com.upgrad.hirewheels.dao.UsersDao;
 import com.upgrad.hirewheels.entities.Users;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,15 +23,26 @@ public class HireWheelsApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(HireWheelsApplication.class, args);
 		ApplicationContext ctx = SpringApplication.run(HireWheelsApplication.class, args);
-		        UsersDao usersDao = ctx.getBean(UsersDao.class);
+		UsersDao usersDao = ctx.getBean(UsersDao.class);
+		RoleDao roleDao = ctx.getBean(RoleDao.class);
 
 		System.out.println("*********inserting 5 users**********");
+
+		Role admin = new Role();
+		admin.setRoleName("ADMIN");
+		Role userRole = new Role();
+		userRole.setRoleName("USER");
+
+		Role savedAdmin = roleDao.save(admin);
+		Role savedUser = roleDao.save(userRole);
+
 		Users user1 = new Users();
 		user1.setEmail("user1@example.com");
 		user1.setFirstName("u1fn");
 		user1.setLastName("u1ln");
 		user1.setMobileNo("+91******1");
 		user1.setPassword("pass1");
+		user1.setRole(savedAdmin);
 
 		Users user2 = new Users();
 		user2.setEmail("user2@example.com");
@@ -37,6 +50,7 @@ public class HireWheelsApplication {
 		user2.setLastName("u2ln");
 		user2.setMobileNo("+91******2");
 		user2.setPassword("pass2");
+		user2.setRole(savedUser);
 
 
 		Users user3 = new Users();
@@ -45,6 +59,7 @@ public class HireWheelsApplication {
 		user3.setLastName("u3ln");
 		user3.setMobileNo("+91******3");
 		user3.setPassword("pass3");
+		user3.setRole(savedUser);
 
 
 		Users user4 = new Users();
@@ -53,6 +68,7 @@ public class HireWheelsApplication {
 		user4.setLastName("u4ln");
 		user4.setMobileNo("+91******4");
 		user4.setPassword("pass4");
+		user4.setRole(savedUser);
 
 
 		Users user5 = new Users();
@@ -61,6 +77,7 @@ public class HireWheelsApplication {
 		user5.setLastName("u5ln");
 		user5.setMobileNo("+91******5");
 		user5.setPassword("pass5");
+		user5.setRole(savedUser);
 
 
 		usersDao.save(user1);

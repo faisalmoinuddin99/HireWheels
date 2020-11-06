@@ -1,17 +1,20 @@
 package com.upgrad.hirewheels.entities;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table
 public class City {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
     private int cityId;
 
-    @Column(length = 50, nullable = false)
+    @Column(length = 50)
     private String cityName;
+    @OneToMany(mappedBy = "city", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Location> locations;
 
     public int getCityId() {
         return cityId;
@@ -20,6 +23,7 @@ public class City {
     public void setCityId(int cityId) {
         this.cityId = cityId;
     }
+
 
     public String getCityName() {
         return cityName;
