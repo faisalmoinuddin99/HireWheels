@@ -22,18 +22,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5ff8194-62e3-4276-b612-57b28310562f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/entities/Booking.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/entities/City.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/entities/FuelType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/entities/Location.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/entities/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/entities/Users.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/entities/Vehicle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/entities/VehicleCategory.java" afterDir="false" />
+    <list default="true" id="80082f7e-403c-413c-9327-ffe47ff18342" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/dao/BookingDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/dao/CityDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/dao/FuelTypeDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/dao/LocationDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/dao/RoleDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/dao/UsersDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/dao/VehicleCategoryDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/dao/VehicleDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/dao/VehicleSubcategoryDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/HireWheelsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/HireWheelsApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/entities/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/entities/Users.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,23 +58,22 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectId" id="1jnkVIXQYBSCBwjcTiPXKWHAchz" />
+  <component name="ProjectId" id="1ju6IcuqFKuvCXeLe7wf1sxzPZs" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f5ff8194-62e3-4276-b612-57b28310562f" name="Default Changelist" comment="" />
-      <created>1604447265399</created>
+      <changelist id="80082f7e-403c-413c-9327-ffe47ff18342" name="Default Changelist" comment="" />
+      <created>1604641550467</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1604447265399</updated>
+      <updated>1604641550467</updated>
     </task>
     <servers />
   </component>
@@ -87,15 +87,6 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="408" y="172" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1604572453111">
-      <screen x="0" y="23" width="1440" height="822" />
-    </state>
-    <state x="408" y="172" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1440.822@0.23.1440.822" timestamp="1604572453111" />
-    <state x="88" y="51" key="new project wizard" timestamp="1604572644867">
-      <screen x="0" y="23" width="1440" height="822" />
-    </state>
-    <state x="88" y="51" key="new project wizard/0.23.1440.822@0.23.1440.822" timestamp="1604572644867" />
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
