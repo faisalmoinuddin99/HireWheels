@@ -1,4 +1,5 @@
 package com.upgrad.hirewheels.entities;
+import org.junit.Test;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
