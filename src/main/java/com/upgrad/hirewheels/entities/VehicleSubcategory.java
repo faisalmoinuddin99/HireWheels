@@ -1,36 +1,20 @@
 package com.upgrad.hirewheels.entities;
 
 import javax.persistence.*;
-import java.util.List;
-
 
 @Entity
 public class VehicleSubcategory {
-
     @Id
     @GeneratedValue
     private int vehicleSubcategoryId;
-
-    @Column(length = 50,  unique = true)
+    @Column(length = 50,nullable = false,unique = true)
     private String vehicleSubcategoryName;
-
     @Column(nullable = false)
-    private double pricePerDay;
+    private float pricePerDay;
 
-    @ManyToOne
-    @JoinColumn(name = "vehicle_category_id")
+
+    @JoinColumn(name = "vehicle_category_id",nullable = false)
     private VehicleCategory vehicleCategory;
-
-    @OneToMany(mappedBy = "vehicleSubcategory", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    List<Vehicle> vehicles;
-
-    public int getVehicleSubcategoryId() {
-        return vehicleSubcategoryId;
-    }
-
-    public void setVehicleSubcategoryId(int vehicleSubcategoryId) {
-        this.vehicleSubcategoryId = vehicleSubcategoryId;
-    }
 
     public String getVehicleSubcategoryName() {
         return vehicleSubcategoryName;
@@ -40,11 +24,11 @@ public class VehicleSubcategory {
         this.vehicleSubcategoryName = vehicleSubcategoryName;
     }
 
-    public double getPricePerDay() {
+    public float getPricePerDay() {
         return pricePerDay;
     }
 
-    public void setPricePerDay(double pricePerDay) {
+    public void setPricePerDay(float pricePerDay) {
         this.pricePerDay = pricePerDay;
     }
 
@@ -56,13 +40,22 @@ public class VehicleSubcategory {
         this.vehicleCategory = vehicleCategory;
     }
 
+    public int getVehicleSubcategoryId() {
+        return vehicleSubcategoryId;
+    }
+
+    public void setVehicleSubcategoryId(int vehicleSubcategoryId) {
+        this.vehicleSubcategoryId = vehicleSubcategoryId;
+    }
+
     @Override
-    public String toString() {
-        return "VehicleSubcategory{" +
-                "vehicleSubcategoryId=" + vehicleSubcategoryId +
-                ", vehicleSubcategoryName='" + vehicleSubcategoryName + '\'' +
-                ", pricePerDay=" + pricePerDay +
-                ", vehicleCategory=" + vehicleCategory +
+    public String toString(){
+        return "VehicleSubcategory{"+
+                ", vehicleSubcategoryId = "+vehicleSubcategoryId+
+                ", vehicleSubcategoryName = "+vehicleSubcategoryName+
+                ", pricePerDay = "+pricePerDay+
+                ", vehicleCategory = "+vehicleCategory+
                 '}';
     }
+
 }

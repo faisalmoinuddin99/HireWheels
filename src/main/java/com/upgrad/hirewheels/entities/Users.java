@@ -1,39 +1,28 @@
 package com.upgrad.hirewheels.entities;
 
 import javax.persistence.*;
-import java.util.List;
-
 
 @Entity
-@Table(name = "users")
 public class Users {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int userId;
-
-    @Column(length = 50)
+    @Column(nullable = false,length = 50)
     private String firstName;
-
-    @Column(length = 50)
+    @Column(nullable = false,length = 50)
     private String lastName;
-
-    @Column(length = 50)
+    @Column(length = 50,nullable = false)
     private String password;
-
-    @Column(length = 50, unique = true)
+    @Column(length = 50,nullable = false,unique = true)
     private String email;
-
-    @Column(length = 10, unique = true)
+    @Column(length = 10,nullable = false,unique = true)
     private String mobileNo;
+    @Column
+    private float walletMoney = 10000.00f;
 
-    private double walletMoney = 100000.00;
 
-    @ManyToOne
-    @JoinColumn(name = "role_id", nullable = false)
+    @JoinColumn(name = "role_id",nullable = false)
     private Role role;
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    List<Booking> bookings;
 
     public int getUserId() {
         return userId;
@@ -83,13 +72,14 @@ public class Users {
         this.mobileNo = mobileNo;
     }
 
-    public double getWalletMoney() {
+    public float getWalletMoney() {
         return walletMoney;
     }
 
-    public void setWalletMoney(double walletMoney) {
+    public void setWalletMoney(float walletMoney) {
         this.walletMoney = walletMoney;
     }
+
     public Role getRole() {
         return role;
     }
@@ -99,16 +89,16 @@ public class Users {
     }
 
     @Override
-    public String toString() {
-        return "Users{" +
-                "userId=" + userId +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
-                ", mobileNo='" + mobileNo + '\'' +
-                ", walletMoney=" + walletMoney +
-                ", role=" + role +
+    public String toString(){
+        return "Users{"+
+                ", userId = "+userId+
+                ", firstName = "+firstName+
+                ", lastName = "+lastName+
+                ", password = "+password+
+                ", email = "+email+
+                ", mobileNo = "+mobileNo+
+                ", walletMoney = "+walletMoney+
+                ", role = "+role+
                 '}';
     }
 }

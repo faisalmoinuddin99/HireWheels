@@ -1,48 +1,36 @@
 package com.upgrad.hirewheels.entities;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
-@Table
 public class Vehicle {
-
     @Id
     @GeneratedValue
     private int vehicleId;
-
-    @Column(length = 50)
+    @Column(length = 50, nullable = false)
     private String vehicleModel;
-
-    @Column(length = 10)
+    @Column(length = 10, nullable = false)
     private String vehicleNumber;
-
-    @ManyToOne
-    @JoinColumn(name = "vehicle_subcategory_id")
-    private VehicleSubcategory vehicleSubcategory;
-
-    @Column(length = 50)
+    @Column(length = 50, nullable = false)
     private String color;
-
-    @ManyToOne
-    @JoinColumn(name = "location_id")
-    private Location location;
-
-    @ManyToOne
-    @JoinColumn(name = "fuel_type_id")
-    private FuelType fuelType;
-
-    @Column(length = 1)
-    private int availabilityStatus;
-
-    @Column(length = 500, nullable = false)
+    @Column(nullable = false)
+    private int availabilityStaus;
+    @Column(nullable = false, length = 500)
     private String vehicleImageUrl;
 
-    @OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    List<Booking> bookings;
+
+    @JoinColumn(name = "vehicle_subcategory_id",nullable = false)
+    private VehicleSubcategory vehicleSubcategory;
+
+
+    @JoinColumn(name="location_id",nullable = false)
+    private Location location;
+
+
+    @JoinColumn(name = "fuel_type_id",nullable = false)
+    private FuelType fuelType;
 
     public int getVehicleId() {
-
         return vehicleId;
     }
 
@@ -51,23 +39,43 @@ public class Vehicle {
     }
 
     public String getVehicleModel() {
-
         return vehicleModel;
     }
 
     public void setVehicleModel(String vehicleModel) {
-
         this.vehicleModel = vehicleModel;
     }
 
     public String getVehicleNumber() {
-
         return vehicleNumber;
     }
 
     public void setVehicleNumber(String vehicleNumber) {
-
         this.vehicleNumber = vehicleNumber;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public int getAvailabilityStaus() {
+        return availabilityStaus;
+    }
+
+    public void setAvailabilityStaus(int availabilityStaus) {
+        this.availabilityStaus = availabilityStaus;
+    }
+
+    public String getVehicleImageUrl() {
+        return vehicleImageUrl;
+    }
+
+    public void setVehicleImageUrl(String vehicleImageUrl) {
+        this.vehicleImageUrl = vehicleImageUrl;
     }
 
     public VehicleSubcategory getVehicleSubcategory() {
@@ -78,19 +86,7 @@ public class Vehicle {
         this.vehicleSubcategory = vehicleSubcategory;
     }
 
-
-    public String getColor() {
-
-        return color;
-    }
-
-    public void setColor(String color) {
-
-        this.color = color;
-    }
-
     public Location getLocation() {
-
         return location;
     }
 
@@ -106,34 +102,18 @@ public class Vehicle {
         this.fuelType = fuelType;
     }
 
-    public int getAvailabilityStatus() {
-        return availabilityStatus;
-    }
-
-    public void setAvailabilityStatus(int availabilityStatus) {
-        this.availabilityStatus = availabilityStatus;
-    }
-
-    public String getVehicleImageUrl() {
-        return vehicleImageUrl;
-    }
-
-    public void setVehicleImageUrl(String vehicleImageUrl) {
-        this.vehicleImageUrl = vehicleImageUrl;
-    }
-
     @Override
-    public String toString() {
+    public String toString(){
         return "Vehicle{" +
-                "vehicleId=" + vehicleId +
-                ", vehicleModel='" + vehicleModel + '\'' +
-                ", vehicleNumber='" + vehicleNumber + '\'' +
-                ", vehicleSubcategory=" + vehicleSubcategory +
-                ", color='" + color + '\'' +
-                ", location=" + location +
-                ", fuelType=" + fuelType +
-                ", availabilityStatus=" + availabilityStatus +
-                ", vehicleImageUrl='" + vehicleImageUrl + '\'' +
+                ", vehicleId = "+vehicleId+
+                ", vehicleModel = "+vehicleModel+
+                ", vehicleNumber = "+vehicleNumber+
+                ", color = "+color+
+                ", availabilityStaus = "+availabilityStaus+
+                ", vehicleImageUrl = "+vehicleImageUrl+
+                ", vehicleSubcategory = "+vehicleSubcategory+
+                ", location = "+location+
+                ", fuelType = "+fuelType+
                 '}';
     }
 }

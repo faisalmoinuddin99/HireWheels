@@ -1,35 +1,22 @@
 package com.upgrad.hirewheels.entities;
 
 import javax.persistence.*;
-import java.util.List;
-
 
 @Entity
-@Table
 public class Location {
-
     @Id
     @GeneratedValue
     private int locationId;
-
-    @Column(length = 50)
+    @Column(length = 50,nullable = false)
     private String locationName;
-
-    @Column(length = 100)
+    @Column(length = 100,nullable = false)
     private String address;
-
-    @ManyToOne
-    @JoinColumn(name = "city_id")
-    private City city;
-
-    @Column(length = 6)
+    @Column(length = 6,nullable = false)
     private String pincode;
 
-    @OneToMany(mappedBy = "location", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    List<Booking> bookings;
 
-    @OneToMany(mappedBy = "location", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Vehicle> vehicles;
+    @JoinColumn(name="city_id",nullable = false)
+    private City city;
 
     public int getLocationId() {
         return locationId;
@@ -39,11 +26,11 @@ public class Location {
         this.locationId = locationId;
     }
 
-    public String getLocationName() {
+    public String getLocationNmae() {
         return locationName;
     }
 
-    public void setLocationName(String locationName) {
+    public void setLocationNmae(String locationNmae) {
         this.locationName = locationName;
     }
 
@@ -55,15 +42,6 @@ public class Location {
         this.address = address;
     }
 
-    public City getCity() {
-        return city;
-    }
-
-    public void setCity(City city) {
-        this.city = city;
-    }
-
-
     public String getPincode() {
         return pincode;
     }
@@ -72,14 +50,21 @@ public class Location {
         this.pincode = pincode;
     }
 
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
+    }
+
     @Override
-    public String toString() {
-        return "Location{" +
-                "locationId=" + locationId +
-                ", locationName='" + locationName + '\'' +
-                ", address='" + address + '\'' +
-                ", city=" + city +
-                ", pincode='" + pincode + '\'' +
+    public String toString(){
+        return "Location{"+
+                ", lcoationId = "+locationId+
+                ", locatioName = "+locationName+
+                ", address = "+address+
+                ", pincode = "+pincode+
                 '}';
     }
 }

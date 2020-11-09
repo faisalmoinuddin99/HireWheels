@@ -1,21 +1,17 @@
 package com.upgrad.hirewheels.entities;
 
-import javax.persistence.*;
-import java.util.List;
-
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity
 public class Role {
-
     @Id
     @GeneratedValue
     private int roleId;
-
-    @Column(length = 50, unique = true)
+    @Column(nullable = false,unique = true)
     private String roleName;
-
-    @OneToMany(mappedBy = "role", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    List<Users> users ;
 
     public int getRoleId() {
         return roleId;
@@ -32,12 +28,11 @@ public class Role {
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
-
     @Override
     public String toString() {
         return "Role{" +
-                "roleId=" + roleId +
-                ", roleName='" + roleName + '\'' +
+                ", roleId = " + roleId +
+                ", roleName = " + roleName +
                 '}';
     }
 }

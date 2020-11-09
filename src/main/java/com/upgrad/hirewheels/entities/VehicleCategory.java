@@ -1,23 +1,18 @@
 package com.upgrad.hirewheels.entities;
 
-import javax.persistence.*;
-import java.util.List;
-
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity
-@Table
 public class VehicleCategory {
-
     @Id
     @GeneratedValue
     private int vehicleCategoryId;
 
-    @Column(length = 50,  unique = true)
+    @Column(nullable = false,unique = true,length = 50)
     private String vehicleCategoryName;
-
-    @OneToMany(mappedBy = "vehicleCategory", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<VehicleSubcategory> vehicleSubcategories;
-
 
     public int getVehicleCategoryId() {
         return vehicleCategoryId;
@@ -36,10 +31,10 @@ public class VehicleCategory {
     }
 
     @Override
-    public String toString() {
-        return "VehicleCategory{" +
-                "vehicleCategoryId=" + vehicleCategoryId +
-                ", vehicleCategoryName='" + vehicleCategoryName + '\'' +
+    public String toString(){
+        return "VehicleCategory{"+
+                ", vehicleCategoryId = "+vehicleCategoryId+
+                ", vehicleCategoryName = "+vehicleCategoryName+
                 '}';
     }
 }

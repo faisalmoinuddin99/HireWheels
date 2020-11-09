@@ -1,39 +1,33 @@
 package com.upgrad.hirewheels.entities;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Entity
-@Table
 public class Booking {
-
     @Id
     @GeneratedValue
     private int bookingId;
-
     @Column(nullable = false)
-    private Date pickupDate;
-
+    private LocalDateTime pickupDate;
     @Column(nullable = false)
-    private Date dropoffDate;
-
+    private LocalDateTime dropoffDate;
     @Column(nullable = false)
-    private Date bookingDate;
-
+    private LocalDateTime bookingDate;
     @Column(nullable = false)
-    private double amount;
+    private float amount;
 
-    @ManyToOne
-    @JoinColumn(name = "location_id")
+
+    @JoinColumn(name = "location_id", nullable = false)
     private Location location;
 
-    @ManyToOne
-    @JoinColumn(name = "vehicle_id")
+
+    @JoinColumn(name = "vehicle_id", nullable = false)
     private Vehicle vehicle;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private Users user;
+
+    @JoinColumn(name = "user_id", nullable = false)
+    private Users users;
 
     public int getBookingId() {
         return bookingId;
@@ -43,35 +37,35 @@ public class Booking {
         this.bookingId = bookingId;
     }
 
-    public Date getPickupDate() {
+    public LocalDateTime getPickupDate() {
         return pickupDate;
     }
 
-    public void setPickupDate(Date pickupDate) {
+    public void setPickupDate(LocalDateTime pickupDate) {
         this.pickupDate = pickupDate;
     }
 
-    public Date getDropoffDate() {
+    public LocalDateTime getDropoffDate() {
         return dropoffDate;
     }
 
-    public void setDropoffDate(Date dropoffDate) {
+    public void setDropoffDate(LocalDateTime dropoffDate) {
         this.dropoffDate = dropoffDate;
     }
 
-    public Date getBookingDate() {
+    public LocalDateTime getBookingDate() {
         return bookingDate;
     }
 
-    public void setBookingDate(Date bookingDate) {
+    public void setBookingDate(LocalDateTime bookingDate) {
         this.bookingDate = bookingDate;
     }
 
-    public double getAmount() {
+    public float getAmount() {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(int amount) {
         this.amount = amount;
     }
 
@@ -91,25 +85,26 @@ public class Booking {
         this.vehicle = vehicle;
     }
 
-    public Users getUser() {
-        return user;
+    public Users getUsers() {
+        return users;
     }
 
-    public void setUser(Users user) {
-        this.user = user;
+    public void setUsers(Users users) {
+        this.users = users;
     }
 
     @Override
     public String toString() {
         return "Booking{" +
-                "bookingId=" + bookingId +
-                ", pickupDate=" + pickupDate +
-                ", dropoffDate=" + dropoffDate +
-                ", bookingDate=" + bookingDate +
-                ", amount=" + amount +
-                ", location=" + location +
-                ", vehicle=" + vehicle +
-                ", user=" + user +
+                "bookingId = " + bookingId +
+                ", pickupDate = " + pickupDate +
+                ", dropoffDate = " + dropoffDate +
+                ", bookingDate = " + bookingDate +
+                ", amount = " + amount +
+                ", location = " + location +
+                ". vehicle = " + vehicle +
+                ", users = " + users +
                 '}';
+
     }
 }
