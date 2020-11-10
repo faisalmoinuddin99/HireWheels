@@ -3,7 +3,9 @@ package com.upgrad.hirewheels.controllers;
 import com.upgrad.hirewheels.entities.FuelType;
 import com.upgrad.hirewheels.entities.Users;
 import com.upgrad.hirewheels.entities.Vehicle;
-import com.upgrad.hirewheels.exceptions.VehicleNotFoundException;
+
+import com.upgrad.hirewheels.utils.EntityDTOConverter;
+import com.upgrad.hirewheels.validator.VehicleValidator;
 import com.upgrad.hirewheels.services.VehicleService;
 import com.upgrad.hirewheels.utils.DTOEntityConverter;
 import org.modelmapper.ModelMapper;
@@ -19,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(value="/hirewheels_app/v1")
+@RequestMapping(value="/hirewheels/v1")
 public class VehicleController {
 
     @Autowired
@@ -36,7 +38,7 @@ public class VehicleController {
     ModelMapper modelmapper;
 
     @Autowired
-    EntityDTOCoverter entityDTOConverter;
+    EntityDTOConverter entityDTOConverter;
 
     @Autowired
     DTOEntityConverter dtoEntityConverter;
@@ -44,8 +46,8 @@ public class VehicleController {
     @Autowired
     VehicleValidator vehicleValidator;
 
-    @GetMapping(value = "/hirewheels/v1/vehicles",produces= MediaType.APPLICATION_JSON_VALUE,headers="Accept=application/json")
-    public ResponseEntity getVehicles() {
+    @GetMapping(value = "/vehicles",produces= MediaType.APPLICATION_JSON_VALUE,headers="Accept=application/json")
+    public ResponseEntity findAllVehicles() {
         List<Vehicle> vehicleList = vehicleService.getAllVehicles();
         return new ResponseEntity<>(vehicleList, HttpStatus.OK);
     }

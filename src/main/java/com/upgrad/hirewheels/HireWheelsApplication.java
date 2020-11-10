@@ -5,6 +5,10 @@ import com.upgrad.hirewheels.entities.Booking;
 import com.upgrad.hirewheels.dao.UsersDao;
 import com.upgrad.hirewheels.entities.Users;
 import com.upgrad.hirewheels.entities.Vehicle;
+import com.upgrad.hirewheels.exceptions.MobileNumberNotUniqueException;
+import com.upgrad.hirewheels.exceptions.UnauthorizedUserException;
+import com.upgrad.hirewheels.exceptions.UserAlreadyExistsException;
+import com.upgrad.hirewheels.exceptions.VehicleNotFoundException;
 import com.upgrad.hirewheels.services.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,7 +19,9 @@ import static jdk.nashorn.internal.objects.NativeArray.push;
 @SpringBootApplication
 public class HireWheelsApplication {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UserAlreadyExistsException,
+            MobileNumberNotUniqueException,  UnauthorizedUserException,
+            VehicleNotFoundException{
         ApplicationContext context =SpringApplication.run(HireWheelsApplication.class, args);
         UsersDao usersDao = context.getBean(UsersDao.class);
         RoleDao roleDao = context.getBean(RoleDao.class);

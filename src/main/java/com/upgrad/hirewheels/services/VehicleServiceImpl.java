@@ -10,6 +10,10 @@ import java.util.List;
 public class VehicleServiceImpl implements VehicleService{
 
     @Autowired
+    Vehicle vehicle;
+
+
+    @Autowired
     public VehicleDao vehicleDao;
 
     @Autowired
@@ -30,6 +34,13 @@ public class VehicleServiceImpl implements VehicleService{
     public List<Vehicle> getAvailableVehicles(List<Vehicle> vehicle) {
 
         return vehicleDao.findAll();
+    }
+
+    @Override
+    public Vehicle updateVehicleDetails(int vehicleId) {
+        List<Vehicle> id ;
+        Vehicle savedVehicle = getAvailableVehicles(id);
+        return vehicleDao.save(savedVehicle);
     }
 
 }

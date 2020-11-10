@@ -15,7 +15,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="hirewheels" options="-parameters" />
+      <module name="hirewheels" options="-parameters --add-exports jdk.scripting.nashorn/jdk.nashorn.internal.objects=ALL-UNNAMED" />
     </option>
   </component>
 </project>
