@@ -23,14 +23,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80082f7e-403c-413c-9327-ffe47ff18342" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/dao/UserRoleDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/entities/UserRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/exceptions/EmailIdNotUniqueException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/exceptions/MobileNumberNotUniqueException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/exceptions/UnauthorizedUserException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/exceptions/UserAlreadyExistsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/services/AdminService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/services/AdminServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/services/BookingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/services/BookingServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/services/InitService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/services/InitServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/services/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/services/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/services/VehicleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/services/VehicleServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/HireWheelsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/HireWheelsApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/entities/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/entities/Booking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/dao/CityDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/dao/CityDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/dao/FuelTypeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/dao/FuelTypeDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/dao/VehicleCategoryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/dao/VehicleCategoryDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/entities/FuelType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/entities/FuelType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/entities/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/entities/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/entities/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/entities/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/entities/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/entities/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/entities/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/entities/Vehicle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/entities/VehicleSubcategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/entities/VehicleSubcategory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +79,26 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="HireWheelsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.upgrad.hirewheels.HireWheelsApplication" />
+      <module name="hirewheels" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.upgrad.hirewheels.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.HireWheelsApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

@@ -13,6 +13,10 @@ public class FuelType {
     @Column(length = 50,nullable = false,unique = true)
     private String fuelType;
 
+    public FuelType(int i, String petrol) {
+
+    }
+
     public int getFuelTypeId() {
         return fuelTypeId;
     }
@@ -20,6 +24,8 @@ public class FuelType {
     public void setFuelTypeId(int fuelTypeId) {
         this.fuelTypeId = fuelTypeId;
     }
+
+
 
     public String getFuelType() {
         return fuelType;
