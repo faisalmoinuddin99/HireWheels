@@ -64,9 +64,9 @@ public class InitServiceImpl implements InitService{
 
     }
 
-    private void addCity() {
-        cityDao.save(new City(1,"Mumbai"));
-    }
+//    private void addCity() {
+//        cityDao.save(new City(1,"Mumbai"));
+//    }
 
     private void addVehicleSubCategory() {
         List<VehicleCategory> vehicleCategoryList = Arrays.asList(new VehicleCategory(10, "CAR"),
@@ -99,7 +99,7 @@ public class InitServiceImpl implements InitService{
     }
 
     private void addUsers() {
-        Users adminUser = new Users("Upgrad","Admin","admin@123","upgrad@gmail.com",
+        Users adminUser = new Users ("Upgrad","Admin","admin@123","upgrad@gmail.com",
                 "9999999999", 10000,userRoleDAO.findByRoleId(1));
         usersDao.save(adminUser);
     }

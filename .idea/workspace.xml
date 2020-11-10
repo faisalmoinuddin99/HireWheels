@@ -23,29 +23,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80082f7e-403c-413c-9327-ffe47ff18342" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/dao/UserRoleDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/entities/UserRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/exceptions/EmailIdNotUniqueException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/exceptions/MobileNumberNotUniqueException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/exceptions/UnauthorizedUserException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/exceptions/UserAlreadyExistsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/services/AdminService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/services/AdminServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/services/BookingService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/services/BookingServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/services/InitService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/services/InitServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/services/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/services/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/services/VehicleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/services/VehicleServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/HireWheelsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/HireWheelsApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/dao/CityDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/dao/CityDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/dao/FuelTypeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/dao/FuelTypeDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/dao/VehicleCategoryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/dao/VehicleCategoryDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/entities/FuelType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/entities/FuelType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/entities/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/entities/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/dao/VehicleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/dao/VehicleDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/entities/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/entities/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/entities/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/entities/Vehicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/services/InitServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/services/InitServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/services/VehicleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/upgrad/hirewheels/services/VehicleService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 @Entity
 public class Users {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int userId;
@@ -23,6 +24,18 @@ public class Users {
     @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     @JoinColumn(name = "role_id",nullable = false)
     private String role;
+
+    public Users() {
+    }
+
+    public Users(int userId, String firstName) {
+        this.userId=userId;
+        this.firstName=firstName;
+    }
+
+    public Users(String firstName) {
+        this.firstName=firstName;
+    }
 
     public int getUserId() {
         return userId;
