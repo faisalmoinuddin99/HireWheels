@@ -6,6 +6,8 @@ import com.upgrad.hirewheels.services.BookingService;
 import com.upgrad.hirewheels.validator.BookingValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +24,11 @@ public class BookingController {
 
     @Autowired
     BookingValidator bookingValidator;
+
+    @Autowired
+    BookingDTO bookingDTO;
+
+    private static final Logger logger = LoggerFactory.getLogger(BookingController.class);
 
 
 
