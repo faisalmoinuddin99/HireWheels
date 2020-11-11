@@ -3,6 +3,7 @@ package com.upgrad.hirewheels.services;
 import com.upgrad.hirewheels.dao.VehicleDao;
 import com.upgrad.hirewheels.entities.Vehicle;
 import org.springframework.beans.factory.annotation.Autowired;
+import com.upgrad.hirewheels.exceptions.VehicleNotFoundException;
 
 public class AdminServiceImpl implements AdminService{
 
@@ -11,7 +12,8 @@ public class AdminServiceImpl implements AdminService{
     public VehicleDao vehicleDao;
 
     @Override
-    public Vehicle registerVehicle(Vehicle vehicle) {
+    public Vehicle registerVehicle(Vehicle vehicle)throws VehicleNotFoundException {
+
         return vehicle;
     }
 

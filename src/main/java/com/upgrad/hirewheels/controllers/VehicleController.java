@@ -8,6 +8,10 @@ import com.upgrad.hirewheels.utils.EntityDTOConverter;
 import com.upgrad.hirewheels.validator.VehicleValidator;
 import com.upgrad.hirewheels.services.VehicleService;
 import com.upgrad.hirewheels.utils.DTOEntityConverter;
+import com.upgrad.hirewheels.exceptions.APIException;
+import com.upgrad.hirewheels.exceptions.VehicleCategoryDetailsNotFoundException;
+import com.upgrad.hirewheels.exceptions.VehicleNotFoundException;
+import com.upgrad.hirewheels.exceptions.VehicleSubcategoryDetailsNotFoundException;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -38,6 +42,9 @@ public class VehicleController {
     ModelMapper modelmapper;
 
     @Autowired
+    Vehicle vehicle;
+
+    @Autowired
     EntityDTOConverter entityDTOConverter;
 
     @Autowired
@@ -47,8 +54,9 @@ public class VehicleController {
     VehicleValidator vehicleValidator;
 
     @GetMapping(value = "/vehicles",produces= MediaType.APPLICATION_JSON_VALUE,headers="Accept=application/json")
-    public ResponseEntity findAllVehicles() {
-        List<Vehicle> vehicleList = vehicleService.getAllVehicles();
+    public ResponseEntity getVehicles ()throws APIException, VehicleNotFoundException, VehicleCategoryDetailsNotFoundException, VehicleSubcategoryDetailsNotFoundException {
+        List<Vehicle> vehicleId = null;
+        List<Vehicle> vehicleList = vehicleService.getAllVehicles(vehicleId);
         return new ResponseEntity<>(vehicleList, HttpStatus.OK);
     }
 
