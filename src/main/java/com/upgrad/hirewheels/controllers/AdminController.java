@@ -5,10 +5,13 @@ import com.upgrad.hirewheels.entities.Vehicle;
 import com.upgrad.hirewheels.services.AdminService;
 import com.upgrad.hirewheels.services.VehicleService;
 import com.upgrad.hirewheels.exceptions.APIException;
+import com.upgrad.hirewheels.responses.CustomResponse;
 
 import com.upgrad.hirewheels.utils.DTOEntityConverter;
 import com.upgrad.hirewheels.utils.EntityDTOConverter;
 import com.upgrad.hirewheels.validator.AdminRequestValidator;
+import org.apache.tomcat.util.http.parser.Authorization;
+import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.modelmapper.ModelMapper;
@@ -18,6 +21,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import javax.naming.AuthenticationException;
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.text.ParseException;
 
 @RestController
@@ -44,6 +50,9 @@ public class AdminController {
 
     @Autowired
     DTOEntityConverter dtoEntityConverter;
+
+    @Autowired
+    Authorization authorization;
 
     private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
 
@@ -74,6 +83,17 @@ public class AdminController {
         Vehicle updatedVehicle =  vehicleService.updateVehicleDetails(vehicleid);
         VehicleDTO updatedVehicleDTO = modelmapper.map(updatedVehicle, VehicleDTO.class);
         return new ResponseEntity<>(updatedVehicleDTO, HttpStatus.OK);
+    }
+    @DeleteMapping("/vehicles/{vehicleid}")
+    public ResponseEntity deleteVehicleDetails(@PathVariable int vehicleid,@RequestHeader(value = "X-ACCESS-TOKEN")String accessToken){
+        authorization.adminAuthorization(accessToken);
+        ResponseEntity responseEntity = null;
+        int availability_status = vehicleDTO.getAvailabilityStaus();
+        adminRequestValidator.validateChangeVehicleAvailablity(availability_status);
+        boolean vehicle = adminService.changeAvailability(availability_status);
+        CustomResponse response = new CustomResponse(new LocalDateTime(),"Activity performed Successfully",200);
+        responseEntity = new ResponseEntity(response,HttpStatus.OK);
+        return responseEntity;
     }
 
 
